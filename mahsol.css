@@ -1,0 +1,130 @@
+/* styles.css */
+body{
+  background-image: url(back2.jpg) ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sidebody{
+  left: 0px;
+  width: 50%;
+  float: right;
+  margin: 30px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 30px gray;
+  border-radius: 10px;
+}
+  @media (max-width:768px) {
+  .sidebody{
+    width: auto;
+    height: auto;
+    float: none;
+    display: grid;
+    font-size: small;
+  }
+  
+
+}
+
+/* Header */
+*{
+  direction: rtl;
+}
+
+
+
+
+/* Left Section */
+.left-section {
+  justify-content: center;
+  
+  margin: 0px;
+  width: 30%;
+}
+
+h1,
+h2 {
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.buttons {
+  width: auto;
+}
+
+.pink-button {
+  background-color: rgb(244, 188, 197);
+  color: white;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Middle Section */
+.middle-section {
+  margin-top: 30px;
+  width: 40%;
+  float: left;
+}
+@media(max-width:768px){
+  .middle-section{
+    float: none;
+    margin-right:10px;
+  }
+}
+#main-photo {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 5px;
+}
+@media(max-width:768px){
+  #main-photo {
+    width: 210%;
+    margin-right: 15px;
+  }
+}
+
+.small-photo {
+  border-radius: 5px;
+  right: 100px;
+  width: 20%;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+@media(max-width:768px){
+  .small-photo{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+  }
+}
+
+/* Footer */
+
+
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background-color: #f9f9f9;
+}
+.card-body {
+  padding: 20px;
+}
+.card-title {
+  font-size: 24px;
+}
+input[type="checkbox"] {
+  margin-right: 5px;
+}
