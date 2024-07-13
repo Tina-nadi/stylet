@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+  <title>سبد خرید</title>
+        
+  <style>
+    img{
+      width: 50%;
+    }
+    body{
+        background-image: url(back4.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+          
+        }
+    #Collar-container{
+      margin: 5% 20% 5% 20%;
+    }
+    @media (max-width:768px) {
+      #Collar-container{
+        margin: 20px;
+      text-align: center;
+    }
+    }
+    #Skirt-container{
+      margin: 5% 20% 5% 20%;
+    }
+    @media (max-width:768px) {
+      #Skirt-container{
+        margin: 20px;
+      text-align: center;
+    }
+    }
+    #Model-container{
+      margin: 5% 20% 5% 20%;
+    }
+    @media (max-width:768px) {
+      #Model-container{
+        margin: 20px;
+      text-align: center;
+    }
+    }
+    #product-container{
+      margin: 5% 20% 5% 20%;
+    }
+    @media (max-width:768px) {
+      #product-container{
+        margin: 20px;
+      text-align: center;
+    }
+    }
+    .card{
+      background-color:rgb(222, 187, 255);
+    }
+          button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+       button:hover {
+            background-color: #0056b3;
+        }
+  </style>
+</head>
+<body> 
+   <div id="Collar-container"></div>
+   <div id="Skirt-container"></div>
+   <div id="Model-container"></div>
+   <div id="product-container"></div>
+       
+
+    <script>
+
+      
+
+     window.onload = function() {
+       var selectedCollar = localStorage.getItem("selectedCollar");
+       var selectedCollarName=localStorage.getItem("selectedCollarName");
+       var selectedCollarColor=localStorage.getItem("selectedCollarColor");
+       var selectedCollarSize = localStorage.getItem("selectedCollarSize");
+        if (selectedCollar) {
+           var collarImage = document.createElement("img");
+            collarImage.src = selectedCollar;
+             }
+         var selectedSkirt = localStorage.getItem("selectedSkirt");
+         var selectedSkirtName = localStorage.getItem("selectedSkirtName");
+         var selectedSkirtColor = localStorage.getItem("selectedSkirtColor");
+         var selectedSkirtSize=localStorage.getItem("selectedSkirtSize");
+          if (selectedSkirt) {
+             var skirtImage = document.createElement("img"); 
+             skirtImage.src = selectedSkirt;
+              }
+        var selectedModel = localStorage.getItem("selectedModel");
+        var selectedModalNAme = localStorage.getItem("selectedImageName");
+        var textareaContent=localStorage.getItem("textareaContent");
+        var selectedModelSize=localStorage.getItem("selectedRadioValue");
+        if(selectedModel){
+          var modelImage = document.createElement("img"); 
+          modelImage.src = selectedModel;
+        }
+         var selectedProduct= localStorage.getItem("selectedProduct");
+         var selectedProductName= localStorage.getItem("selectedProductName");
+         var selectedProductPrice= localStorage.getItem("selectedProductPrice");
+         var selectedRadioColorValue= localStorage.getItem("selectedRadioColorValue");
+         var selectedRadioSizeValue= localStorage.getItem("selectedRadioSizeValue");
+             if(selectedProduct){
+          var image = document.createElement("img"); 
+          image.src = selectedProduct;
+        }
+ 
+      
+           var collarContainer = document.getElementById("Collar-container");
+            if (collarImage) {
+               var collarCard = `
+                <div class="card product">
+                 <div class="row">
+                  <div class="col-md-4">
+                    <img src="${collarImage.src}" alt="..."> 
+                  </div>
+                   <div class="col-md-8">
+                     <div class="card-body">
+                       <h5 class="card-title"> اسم :${selectedCollarName}</h5>
+                        <p class="card-text">رنگ : ${selectedCollarColor}</p>
+                         <p class="card-text">سایز:${selectedCollarSize}</p>
+                         <button id="deleteCollarButton">حذف</button>
+                          </div> 
+                          </div>    
+                  </div> 
+                </div> 
+                <br>`; 
+               collarContainer.innerHTML = collarCard;
+                }
+                var skirtContainer = document.getElementById("Skirt-container");
+                 if (skirtImage) {
+                   var skirtCard = ` <div class="card"> <div class="row"> 
+                    <div class="col-md-4"> <img src="${skirtImage.src}" alt="...">
+                       </div>
+                    <div class="col-md-8">
+                       <div class="card-body"> 
+                        <h5 class="card-title"> اسم:${selectedSkirtName}</h5> 
+                        <p class="card-text">رنگ:${selectedSkirtColor}</p>
+                         <p class="card-text">سایز:
+                          ${selectedSkirtSize}</p>
+                          <button id="deleteSkirtButton">حذف</button>
+
+                          </div> 
+                          </div>
+                    
+                     </div> </div> `;
+                    skirtContainer.innerHTML = skirtCard;
+                     } 
+                     var modelContainer = document.getElementById("Model-container");
+                     if (modelImage) {
+               var modelCard = `
+                <div class="card product">
+                 <div class="row">
+                  <div class="col-md-4">
+                    <img src="${modelImage.src}" alt="..."> 
+                  </div>
+                   <div class="col-md-8">
+                     <div class="card-body">
+                       <h5 class="card-title"> اسم :${selectedModalNAme}</h5>
+                        <p class="card-text">رنگ : ${textareaContent} </p>
+                         <p class="card-text">سایز:${selectedModelSize}</p>
+                         <button id="deleteModelButton">حذف</button>
+                          </div> 
+                          </div>    
+                  </div> 
+                </div> 
+                <br>`;
+                modelContainer.innerHTML = modelCard;
+              }
+              var productContainer = document.getElementById("product-container");
+                     if (image) {
+               var productCard = `
+                <div class="card product">
+                 <div class="row">
+                  <div class="col-md-4">
+                    <img src="${image.src}" alt="..."> 
+                  </div>
+                   <div class="col-md-8">
+                     <div class="card-body">
+                       <h5 class="card-title"> اسم :${selectedProductName}</h5>
+                        <p class="card-text">قیمت :${selectedProductPrice}  </p>
+                        <p class="card-text">رنگ :${selectedRadioColorValue}  </p>
+                         <p class="card-text">سایز:${selectedRadioSizeValue}</p>
+                         <button id="deleteProductButton">حذف</button>
+                          </div> 
+                          </div>    
+                  </div> 
+                </div> 
+                <br>`;
+                productContainer.innerHTML = productCard;
+              }
+              document.getElementById("deleteCollarButton").addEventListener("click", function() {
+                // Remove stored values from localStorage
+                localStorage.removeItem("selectedCollar");
+                localStorage.removeItem("selectedCollarName");
+                localStorage.removeItem("selectedCollarColor");
+                localStorage.removeItem("selectedCollarSize");
+               
+                // Remove collar card from DOM
+                collarContainer.innerHTML = "";  
+                 });
+                 document.getElementById("deleteSkirtButton").addEventListener("click", function() {
+                // Remove stored values from localStorage
+                localStorage.removeItem("selectedSkirt");
+                localStorage.removeItem("selectedSkirtName");
+                localStorage.removeItem("selectedSkirtColor");
+                localStorage.removeItem("selectedSkirtSize");
+               
+                // Remove collar card from DOM
+                skirtContainer.innerHTML = "";  
+                 });
+
+                document.getElementById("deleteModelButton").addEventListener("click", function() {
+                // Remove stored values from localStorage
+                localStorage.removeItem("selectedModel");
+                localStorage.removeItem("selectedModalNAme");
+                localStorage.removeItem("textareaContent");
+                localStorage.removeItem("selectedModelSize");          
+                // Remove collar card from DOM
+                modelContainer.innerHTML = "";  
+                 });
+              document.getElementById("deleteProductButton").addEventListener("click", function() {
+                // Remove stored values from localStorage
+                localStorage.removeItem("selectedSkirt");
+                localStorage.removeItem("selectedProductName");
+                localStorage.removeItem("selectedProductPrice");
+                localStorage.removeItem("selectedRadioColorValue");
+                localStorage.removeItem("selectedRadioSizeValue");
+               
+                // Remove collar card from DOM
+                skirtContainer.innerHTML = "";  
+                 });
+                    } 
+                     </script>
+         <input type="submit" name="formsubmit" value="پرداخت">
+</body>
+</html>

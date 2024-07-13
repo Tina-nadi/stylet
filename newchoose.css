@@ -1,0 +1,192 @@
+      
+        body{
+        background-image: url(pic/back4.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+          
+        }
+       .tabcontent img{
+        width: 100px;
+      }
+     
+      aside{
+        display: block;
+        margin: 5px;
+      }
+     
+     .aside-border{
+        background-color: #f4e0f0;
+        margin-top: 0px;
+        box-shadow: 0 0 20px rgb(205, 205, 205);
+        border-radius: 10px;
+      }
+      button{
+        border-radius: 5px;
+        background: none;
+        border-radius: 25px 0px 0px 5px;
+      }
+      button:hover{
+        background-color: rgb(227, 163, 229);
+      }
+
+      .first{
+        width: 290px;
+        position: absolute;
+        top: 10px;
+        left: 255px;
+        z-index: 1;
+       }
+  @media (max-width:768px) {
+        .first{
+          top: 95px;
+          left: 20px;
+          width:190px ;
+        }
+      }
+      .second{
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left:247px;
+    width: 297px;
+    overflow: hidden;
+  }
+  @media (max-width:768px) {
+        .second{
+          width: 210px;
+           height: 350px;
+          left: 10px;
+          top: 70px;
+        }
+      }
+  .third{
+    position: absolute;
+    z-index: 3;
+    top: 340px;
+    left: 250px;
+    width: 285px;
+    height: 640px;
+    overflow: hidden;
+
+  }
+  @media (max-width:768px) {
+        .third{
+          width: 210px;
+          height: 500px;
+          left: 10px;
+          top: 280px;
+        }
+      }
+
+  .forth{
+    position: absolute;
+    z-index: 3;
+    top: 5px;
+    left: 55px;
+  }
+  .mydiv{
+    position: relative;
+  }
+  #Collar{ 
+    z-index: 2;
+    top: 390px;
+    left: 140px;
+  }
+
+
+  
+  
+  /* Style tab links */
+  .tablink {
+    background-color: #c5c1f3;
+    color: rgb(1, 1, 1);
+    float: right;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 90px;
+  }
+  
+  .tablink:hover {
+    background-color: #f4e0f0;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 50%;
+  }
+  
+  #mannequin{
+    width: 40%;
+    float: right;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 0 20px rgb(10, 7, 7);
+    background-color: #f4e0f0;
+  }  
+
+  #Sleeve { 
+    width: 40%;
+    float: right;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 0 20px rgb(10, 7, 7);
+    background-color: #f4e0f0;
+}
+  #Collar { 
+    width: 40%;
+    float: right;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 0 20px rgb(10, 7, 7);
+    background-color: #f4e0f0;
+}
+  #skirt{
+    width: 40%;
+    float: right;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 0 20px rgb(10, 7, 7);
+    background-color: #f4e0f0;
+  }
+  .button{
+    color: black;
+    text-decoration: none;
+    padding: 7px;
+    position: relative;
+    justify-content: center;
+    left: 70px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    background-color: #c5c1f3;
+  }
+.button:hover{
+  color: black;
+    background-color: #f4e0f0;
+  }
+
+  .icon-bar{
+    width: 100px;
+    float: right;
+  }
+   .icon-bar button{
+    display: block;
+   }
+   .color , .skirtSize , .collarSize{
+    margin-top: 10%;
+    color: black;
+    direction: rtl;
+   }
+
+   /* choose radio*/
+   .collar-menu {
+    display: none;
+}
+.skirt-menu {
+  display: none;
+}
+
