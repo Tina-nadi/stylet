@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>product page</title>
+    <link rel="stylesheet" type="text/css" href="mahsol.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    
+
+    <div class="container">
+        <div class="sidebody">
+          <div class="left-section">
+            <h1>نام محصول</h1>
+            <ul>
+                <li>مشخصات</li>
+                <li>مشخصات</li>
+                <li>مشخصات</li>
+                <h5>قیمت: 100.000 تومان</h5>
+            </ul>
+            <div class="buttons" >
+                <ul>
+                    <li>
+                     <button id="selectSizeBtn" class="btn btn-outline-primary">انتخاب سایز</button></li>
+                     <div id="sizeCard" class="card" style="display: none;">
+                       <button id="closeSizeBtn">&times;</button>
+                       <div class="card-body">
+                         <h2 class="card-title">جدول سایزبندی</h2>
+                     
+                         <table>
+                             <tr>
+                                 <th>سایز</th>
+                                 <th>  </th>
+                                 <th>قد (سانتی‌متر)</th>
+                                
+                             </tr>
+                             <tr>
+                                 <td>S</td>
+                                 <td>  </td>
+                                 <td>160-165</td>
+                                
+                             </tr>
+                             <tr>
+                                 <td>M</td>
+                                 <td>  </td>
+                                 <td>166-170</td>
+                                 
+                             </tr>
+                             <tr>
+                                 <td>L</td>
+                                 <td>  </td>
+                                 <td>171-175</td>
+                                
+                             </tr>
+                             <tr>
+                                 <td>XL</td>
+                                 <td>  </td>
+                                 <td>176-180</td>
+                             </tr>
+                         </table>
+                     
+                       </div>
+                     </div>
+                   <li> <button id="selectColorBtn" class="btn btn-outline-primary"> انتخاب رنگ</button> </li>
+
+                    <div id="colorCard" class="card" style="display: none;">
+                      <div id="colorSizeForm" class="card-body">
+                        <h2 class="card-title">انتخاب رنگ</h2>
+                      
+                        <label><input type="checkbox" value="قرمز"> قرمز</label><br>
+                        <label><input type="checkbox" value="آبی"> آبی</label><br>
+                        <label><input type="checkbox" value="سبز"> سبز</label><br>
+                      </div>
+                    </div>
+                </ul>
+              <div class="d-grid" gap-2>
+                <button src="index1.php" id="submitOrderBtn" class="btn btn-outline-primary " >ثبت سفارش</button>
+                <div id="totalPrice"></div>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div id="colorModal" class="modal">
+           
+          </div>
+
+        <div class="middle-section">
+            <img id="main-photo" src="زنانه.jpg" alt="Photo1" >
+            <!--
+              <div class="small-photos">
+                <img class="small-photo" src="زنانه.jpg" alt="Photo2" onclick="swapImage('زنانه.jpg')">
+                <img class="small-photo" src="بچگانه.jpg" alt="Photo3" onclick="swapImage('بچگانه.jpg')">
+                <img class="small-photo" src="مردانه.jpg" alt="Photo4" onclick="swapImage('مردانه.jpg')">
+                <img class="small-photo" src="بچگانه.jpg" alt="Photo5" onclick="swapImage('بچگانه.jpg')">
+            </div>
+            -->
+        </div>
+    </div>
+    
+
+    
+    
+
+    <script>
+    function swapImage(newImage){
+        document.getElementById('main-photo').src = newImage;
+    }
+    </script>
+    <script src="bootstrap.min.js"></script>
+
+
+    <script>
+// photo
+document.getElementById('selectColorBtn').addEventListener('click', function() {
+  var colorCard = document.getElementById('colorCard');
+  if (colorCard.style.display === "none") {
+    colorCard.style.display = "block";
+  } else {
+    colorCard.style.display = "none";
+  }
+});
+
+// size
+document.getElementById('selectSizeBtn').addEventListener('click', function() {
+  var sizeCard = document.getElementById('sizeCard');
+  if (sizeCard.style.display === "none") {
+    sizeCard.style.display = "block";
+  } else {
+    sizeCard.style.display = "none";
+  }
+});
+
+document.getElementById('closeSizeBtn').addEventListener('click', function() {
+  document.getElementById('sizeCard').style.display = "none";
+});
+
+// total price
+document.getElementById('submitOrderBtn').addEventListener('click', function() {
+  var selectedColor = document.getElementById('color').value;
+  var selectedSize = document.getElementById('size').value;
+  var price = calculatePrice(selectedColor, selectedSize); // فراخوانی تابع برای محاسبه قیمت
+  document.getElementById('totalPrice').innerHTML = 'قیمت نهایی: ' + price + ' تومان';
+});
+
+function calculatePrice(color, size) {
+  // دستورالعمل محاسبه قیمت بر اساس رنگ و سایز
+  // مثال:
+  var price = 50; // قیمت پایه
+  if (size === 'XL') {
+    price += 10; // اضافه کردن هزینه اضافی برای سایز XL
+  }
+  return price;
+}
+</script>
+    </script>
+</body>
+
+</html>
